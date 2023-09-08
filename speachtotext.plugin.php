@@ -12,9 +12,8 @@
 // get plugin instance
 $plugin = \SLiMS\Plugins::getInstance();
 
-$plugin->register('after_content_load', function(){
-    global $js;
-    $js = <<<HTML
+$plugin->register('after_content_load', function($opac){
+    $opac->js = <<<HTML
         <script>
             // Speach to text
             try {
